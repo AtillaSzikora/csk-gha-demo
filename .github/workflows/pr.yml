@@ -1,0 +1,13 @@
+name: PR checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run the tests
+        run: python3 -m unittest -v
